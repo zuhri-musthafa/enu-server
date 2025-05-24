@@ -1,7 +1,8 @@
 import os
 
 from . import create_app
-app = create_app(os.getenv("CONFIG MODE"))
+config_mode = os.getenv("CONFIG MODE", "development")
+app = create_app(config_mode)
 
 if __name__ == '__main__':
     app.run()
