@@ -37,10 +37,13 @@ def get_data_penerima():
     if cluster is not None:
         query = query.filter_by(cluster=cluster)
 
-    data_penerima = DataPenerima.query.all()
-    response = []
-    for data in data_penerima:
-        response.append(data.to_dict())
+    # data_penerima = DataPenerima.query.all()
+    # response = []
+    # for data in data_penerima:
+    #     response.append(data.to_dict())
+
+    data_penerima = query.all()
+    response = [data.to_dict() for data in data_penerima]
     return jsonify(response)
 
 # Read data penerima by id
