@@ -71,7 +71,6 @@ def update_data_penerima(id):
     data_penerima.k5 = request_form['k5']
     data_penerima.k6 = request_form['k6']
     data_penerima.k7 = request_form['k7']
-    data_penerima.cluster = request_form['cluster']
 
     db.session.commit()
 
