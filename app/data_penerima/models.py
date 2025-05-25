@@ -30,6 +30,7 @@ class DataPenerima(db.Model):
             'k5': self.k5,
             'k6': self.k6,
             'k7': self.k7,
+            'cluster': self.cluster,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
