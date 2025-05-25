@@ -32,6 +32,11 @@ def create_data_penerima():
 
 @data_penerima_bp.route('/data_penerima', methods=['GET'])
 def get_data_penerima():
+    cluster = request.args.get('cluster', type=int)
+    query = DataPenerima.query
+    if cluster is not None:
+        query = query.filter_by(cluster=cluster)
+
     data_penerima = DataPenerima.query.all()
     response = []
     for data in data_penerima:
